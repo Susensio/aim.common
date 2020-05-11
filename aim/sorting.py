@@ -42,6 +42,7 @@ def selection_sort(array):
 
 def merge_sort_slicing(array):
     # Slicing is not efficient, but algorithm is clearer
+    array = list(array)
     n = len(array)
     if n == 1:
         return [array[0]]
@@ -62,6 +63,7 @@ def merge_sort_slicing(array):
 
 
 def merge_sort(array):
+    array = list(array)
     start = 0
     stop = len(array)
 
