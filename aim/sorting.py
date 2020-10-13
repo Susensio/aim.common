@@ -41,7 +41,7 @@ def selection_sort(array):
 
 
 def merge_sort_slicing(array):
-    # Slicing is not efficient, but algorithm is clearer
+    # Linearithmic complexity: Θ(nlogn)
     array = list(array)
     n = len(array)
     if n == 1:
@@ -101,3 +101,7 @@ def merge_sort(array):
         return result
 
     return merge_sort_helper(start, stop)
+
+
+def insertion_sort(array):
+    raise NotImplementedError
