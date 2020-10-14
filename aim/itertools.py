@@ -3,7 +3,8 @@ def combinations(iterable, length):
 
     >>> list(combinations([1, 2, 3], 2)) == [{1, 2}, {1, 3}, {2, 3}]
     True
-    >>> list(combinations('ABCD',2)) == [{'A', 'B'}, {'A', 'C'}, {'A', 'D'}, {'B', 'C'}, {'B', 'D'}, {'C', 'D'}]
+    >>> list(combinations('ABCD',2)) == [{'A', 'B'}, {'A', 'C'}, {'A', 'D'},\
+        {'B', 'C'}, {'B', 'D'}, {'C', 'D'}]
     True
     """
     if length == 0:
