@@ -37,10 +37,19 @@ class Matrix(list):
             yield self.column(col_num)
 
     def __getitem__(self, arg):
-        rows, cols = arg
         try:
+            rows, cols = arg
+        except TypeError:   # args not a tuple
+            # Allow normal list slicing: matrix[0][0]
+            return super().__getitem__(arg)
+
+        try:
+            # Handle double slicing: matrix[0:9,0:9]
+            # and row slicing:       matrix[0:9, 0]
             return [row[cols] for row in super().__getitem__(rows)]
         except TypeError:
+            # Handle column slicing: matrix[0, 0:9]
+            # and item selection:    matrix[0, 0]
             return super().__getitem__(rows)[cols]
 
     def __str__(self):

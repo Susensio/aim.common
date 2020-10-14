@@ -20,8 +20,12 @@ def test_slice_column(simple_matrix):
     assert simple_matrix[:, 0] == [1, 3]
 
 
-def test_getitem(simple_matrix):
+def test_getitem_slicing(simple_matrix):
     assert simple_matrix[0, 0] == 1
+
+
+def test_getitem_normal(simple_matrix):
+    assert simple_matrix[0][0] == 1
 
 
 def test_submatrix(simple_matrix):
