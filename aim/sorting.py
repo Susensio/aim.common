@@ -1,3 +1,8 @@
+"""I keep this sorting algorithms as implementation examples.
+Python built-in sort is way faster.
+"""
+
+
 def bubble_sort(array):
     # Quadratic complexity: Θ(n²)
     # Largest unsorted element always at end after pass,
