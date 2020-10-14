@@ -45,6 +45,7 @@ def test_matrix_is_iterable():
 def test_matrix_dimmensions(rectangular_matrix):
     assert rectangular_matrix.m == 3
     assert rectangular_matrix.n == 2
+    assert rectangular_matrix.size == (3, 2)
 
 
 def test_matrix_columns(simple_matrix):

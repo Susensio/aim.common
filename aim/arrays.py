@@ -13,8 +13,18 @@ class Matrix(list):
     def row(self, row_num):
         return self[row_num, :]
 
+    @property
+    def rows(self):
+        for row_num in range(self.m):
+            yield self.row(row_num)
+
     def column(self, col_num):
         return self[:, col_num]
+
+    @property
+    def columns(self):
+        for col_num in range(self.n):
+            yield self.column(col_num)
 
     @property
     def m(self):
@@ -27,14 +37,8 @@ class Matrix(list):
         return len(self.row(0))
 
     @property
-    def rows(self):
-        for row_num in range(self.m):
-            yield self.row(row_num)
-
-    @property
-    def columns(self):
-        for col_num in range(self.n):
-            yield self.column(col_num)
+    def size(self):
+        return self.m, self.n
 
     def __getitem__(self, arg):
         try:
