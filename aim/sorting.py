@@ -1,6 +1,9 @@
 """I keep this sorting algorithms as implementation examples.
 Python built-in sort is way faster.
 """
+from warnings import warn
+
+warn("This module implements sorting slower than python built-in")
 
 
 def bubble_sort(array):
