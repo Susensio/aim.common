@@ -16,3 +16,9 @@ class Matrix(list):
             return [row[cols] for row in super().__getitem__(rows)]
         except TypeError:
             return super().__getitem__(rows)[cols]
+
+    def __str__(self):
+        return "".join(["[\n", *[str(row)+",\n" for row in self], "]"])
+
+    def __repr__(self):
+        return f"Matrix({super().__repr__()})"
