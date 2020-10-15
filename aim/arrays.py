@@ -10,31 +10,31 @@ class Matrix(list):
 
         return super().__init__(iterable)
 
-    def row(self, row_num):
+    def _row(self, row_num):
+        """Avoid infinite recursion in: rows, columns, m and n."""
         return self[row_num, :]
 
-    @property
-    def rows(self):
-        for row_num in range(self.m):
-            yield self.row(row_num)
-
-    def column(self, col_num):
+    def _column(self, col_num):
+        """Avoid infinite recursion in: rows, columns, m and n."""
         return self[:, col_num]
 
     @property
+    def rows(self):
+        return [self._row(row_num) for row_num in range(self.m)]
+
+    @property
     def columns(self):
-        for col_num in range(self.n):
-            yield self.column(col_num)
+        return [self._column(col_num) for col_num in range(self.n)]
 
     @property
     def m(self):
         """Number of rows."""
-        return len(self.column(0))
+        return len(self._column(0))
 
     @property
     def n(self):
         """Number of columns."""
-        return len(self.row(0))
+        return len(self._row(0))
 
     @property
     def size(self):
