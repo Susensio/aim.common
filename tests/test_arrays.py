@@ -53,4 +53,4 @@ def test_matrix_columns(simple_matrix):
 
 
 def test_matrix_row(simple_matrix):
-    assert list(simple_matrix.row(1)) == [3, 4]
+    assert list(simple_matrix._row(1)) == [3, 4]
